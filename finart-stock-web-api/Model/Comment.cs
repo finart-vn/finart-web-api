@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace finart_stock_web_api.Model;
 
+[Table("comments")]
 public class Comment
 {
 

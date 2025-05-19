@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using finart_stock_web_api.Data;
@@ -11,9 +12,11 @@ using finart_stock_web_api.Data;
 namespace finart_stock_web_api.Data.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250519095110_AddUsersModels")]
+    partial class AddUsersModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,7 +94,7 @@ namespace finart_stock_web_api.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("users");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("finart_stock_web_api.Model.UserProfile", b =>
@@ -149,7 +152,7 @@ namespace finart_stock_web_api.Data.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("user_profiles");
+                    b.ToTable("UserProfiles");
                 });
 
             modelBuilder.Entity("finart_stock_web_api.Model.UserRole", b =>
@@ -181,7 +184,7 @@ namespace finart_stock_web_api.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("user_roles");
+                    b.ToTable("UserRoles");
                 });
 
             modelBuilder.Entity("finart_stock_web_api.Model.UserSettings", b =>
@@ -232,7 +235,7 @@ namespace finart_stock_web_api.Data.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("user_settings");
+                    b.ToTable("UserSettings");
                 });
 
             modelBuilder.Entity("finart_stock_web_api.Model.Comment", b =>

@@ -8,5 +8,8 @@ public class ApplicationDBContext : DbContext
     {
     }
     public DbSet<User> Users { get; set; }
+    public DbSet<UserProfile> UserProfiles { get; set; }
+    public DbSet<UserSettings> UserSettings { get; set; }
+    public DbSet<UserRole> UserRoles { get; set; }
     public DbSet<Comment> Comments { get; set; }
 }
